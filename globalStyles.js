@@ -23,6 +23,10 @@ body{
   line-height: 1.3;
   font-size: ${({ theme }) => theme.font_regular};
   overflow: overlay;
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 70px;
+  }
 }
 
 @media screen and (min-width: 425px){

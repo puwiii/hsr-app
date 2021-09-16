@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const AnchorLink = styled.a`
-  color: ${({ theme }) => theme.color_text_400 + "99"};
+  color: ${({ theme }) => theme.color_text_400};
   font-weight: 600;
   border: 0;
   border-bottom: 3px solid transparent;
@@ -14,7 +14,7 @@ const AnchorLink = styled.a`
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   user-select: none;
 
   transition: color 105ms linear, border-color 105ms linear;

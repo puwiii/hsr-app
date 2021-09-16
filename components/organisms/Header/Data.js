@@ -20,7 +20,7 @@ export const links = [
   },
   {
     href: "/planes",
-    label: "Planes",
+    label: "Programas",
     icon: <FaRegHandshake />,
   },
   {

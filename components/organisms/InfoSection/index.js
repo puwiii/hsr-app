@@ -4,20 +4,12 @@ import { Subtitle } from "../../atoms/Subtitle";
 import { Title } from "../../atoms/Title";
 import { Pharagraph } from "../../atoms/Pharagraph";
 import { Container } from "../../../globalStyles";
-import { AnimationBox } from "../../molecules/AnimationBox";
+import { AnimationBox } from "../../atoms/AnimationBox";
 
 const StyledInfoSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px 0;
-
-  @media screen and (max-width: 425px) {
-    padding: 40px 0;
-    padding-bottom: 60px;
-  }
-`;
-const InfoSectionContainer = styled(Container)`
   display: flex;
   align-items: center;
   gap: 40px;
@@ -68,15 +60,13 @@ const Index = ({
   }, [mediaType, mediaSource]);
 
   return (
-    <StyledInfoSection>
-      <InfoSectionContainer isColumn={isColumn}>
-        <InfoSectionText>
-          <Title>{title}</Title>
-          <Subtitle>{subtitle}</Subtitle>
-          <Pharagraph>{pharagraph}</Pharagraph>
-        </InfoSectionText>
-        <InfoSectionMedia>{media}</InfoSectionMedia>
-      </InfoSectionContainer>
+    <StyledInfoSection isColumn={isColumn}>
+      <InfoSectionText>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+        <Pharagraph>{pharagraph}</Pharagraph>
+      </InfoSectionText>
+      <InfoSectionMedia>{media}</InfoSectionMedia>
     </StyledInfoSection>
   );
 };

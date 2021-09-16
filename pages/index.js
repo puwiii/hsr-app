@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from "../components/themes";
 import { useStateValue } from "../context/StateProvider";
 import { THEME_STATE } from "../context/reducer";
 
-import Homepage from "../components/templates/Home";
+import Homepage from "../components/templates/Homepage";
 
 export default function Home() {
   const [{ theme }] = useStateValue();

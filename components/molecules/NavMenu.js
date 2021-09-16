@@ -34,6 +34,8 @@ const StyledNavMenu = styled.div`
     gap: 0;
     display: grid;
     grid-template-columns: repeat(${({ lenght }) => lenght}, 1fr);
+    box-shadow: ${({ theme }) => `0 0 50px ${theme.color_text_400}1f`};
+    z-index: 100;
   }
 `;
 

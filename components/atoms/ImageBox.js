@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { AtomicImage } from "../atoms/Image";
+import { AtomicImage } from "./Image";
 
 const StyledImageBox = styled.div`
   position: relative;
@@ -20,8 +20,6 @@ export const ImageBox = ({
     <StyledImageBox width={width} height={height}>
       <AtomicImage
         src={sourceImage}
-        width="100%"
-        height="100%"
         layout="fill"
         quality={quality}
         alt={alt}
