@@ -36,20 +36,20 @@ const InfoSectionText = styled.div`
   flex-direction: column;
 `;
 
-// MEDIA_TYPES=[
-//     0: 'animation',
-//     1: 'Image',
-// ]
-
 const Index = ({
   title,
   subtitle,
-  pharagraph,
+  description,
   mediaType,
   mediaSource = "",
   isColumn = false,
 }) => {
   const [media, setMedia] = useState(null);
+
+  // MEDIA_TYPES=[
+  //     0: 'animation',
+  //     1: 'Image',
+  // ]
 
   useEffect(() => {
     switch (mediaType) {
@@ -64,7 +64,7 @@ const Index = ({
       <InfoSectionText>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
-        <Pharagraph>{pharagraph}</Pharagraph>
+        <Pharagraph>{description}</Pharagraph>
       </InfoSectionText>
       <InfoSectionMedia>{media}</InfoSectionMedia>
     </StyledInfoSection>

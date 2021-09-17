@@ -2,8 +2,9 @@ import React from "react";
 import Header from "../../organisms/Header";
 import InfoSection from "../../organisms/InfoSection";
 import GridServices from "../../organisms/GridItems";
-
+import Carousel from "../../organisms/Carousel";
 import { serviciosData } from "../../data/servicios.data";
+import { bannerData } from "../../data/banner.data";
 import { Container } from "../../../globalStyles";
 
 import styled from "styled-components";
@@ -20,7 +21,7 @@ const Homepage = () => {
   return (
     <>
       <Header />
-
+      <Carousel data={bannerData} />
       <HomepageContainer>
         {/* <Banner
         sourceImage="/images/banner/hospital.jpg"
@@ -29,10 +30,11 @@ const Homepage = () => {
         height="600px"
         objectFit="cover"
       /> */}
+
         <InfoSection
           title="Tu salud es lo más importante"
           subtitle="La mejor atención de la ciudad."
-          pharagraph="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
           mediaType={0}
           mediaSource="home.json"
           isColumn={true}
@@ -45,7 +47,7 @@ const Homepage = () => {
           gap="40px"
           responsiveType="auto-fill"
           min="290px"
-          max="320px"
+          max="350px"
           minMobile="150px"
           maxMobile="1fr"
           qualityMedia={40}

@@ -18,11 +18,15 @@ const StyledLogoLink = styled.a`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 425px) {
+    height: 40px;
+  }
 `;
 
 export const Logo = () => {
   return (
-    <StyledLogo href="/" passHref>
+    <StyledLogo href="/" passHref={true}>
       <StyledLogoLink>
         <AtomicImage
           src="/images/logo-icon.png"

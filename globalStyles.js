@@ -15,7 +15,7 @@ html{
 body{
   /* font-family: 'Lato', sans-serif;
   font-family: 'Merriweather', serif; */
-  padding-top: 70px;
+  padding-top: 80px;
   font-family: 'Lato', sans-serif;
   font-weight: 400; 
   min-height: 200vh;

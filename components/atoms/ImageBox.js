@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AtomicImage } from "./Image";
 
 const StyledImageBox = styled.div`
+  display: block;
   position: relative;
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -13,6 +14,7 @@ export const ImageBox = ({
   width,
   height,
   quality = 75,
+  layout = "fill",
   alt = "",
   objectFit = "contain",
 }) => {
@@ -20,7 +22,7 @@ export const ImageBox = ({
     <StyledImageBox width={width} height={height}>
       <AtomicImage
         src={sourceImage}
-        layout="fill"
+        layout={layout}
         quality={quality}
         alt={alt}
         objectFit={objectFit}

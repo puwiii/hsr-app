@@ -40,7 +40,7 @@ const AnchorIcon = styled.span`
 `;
 const AnchorLabel = styled.span`
   @media screen and (max-width: 768px) {
-    font-size: ${({ theme }) => theme.font_small};
+    font-size: ${({ theme }) => theme.font_xs};
   }
 `;
 

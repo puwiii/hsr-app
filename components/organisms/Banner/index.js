@@ -1,30 +1,64 @@
 import styled from "styled-components";
+import { Container } from "../../../globalStyles";
+import { ImageBox } from "../../atoms/ImageBox";
+import InfoSection from "../InfoSection";
 import { AtomicImage } from "../../atoms/Image";
 
 const StyledBanner = styled.div`
-  display: flex;
+  display: block;
   position: relative;
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background: ${({ theme }) => theme.color_background_500};
 `;
 
-export const Banner = ({
+const BannerMedia = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+`;
+
+const BannerContainer = styled(Container)``;
+
+const Banner = ({
   alt,
-  sourceImage,
+  mediaSource,
   width,
   height,
   objectFit = "cover",
   quality,
+  withoutText = false,
+  title,
+  subtitle,
+  description,
+  aspectRatio,
 }) => {
   return (
     <StyledBanner width={width} height={height}>
       <AtomicImage
-        src={sourceImage}
-        quality={quality ? quality : 75}
-        alt={alt}
-        layout="fill"
+        src={mediaSource}
+        width={aspectRatio}
+        height={1}
+        layout="responsive"
         objectFit={objectFit}
+        quality={quality}
       />
+      <BannerMedia></BannerMedia>
+
+      {title && (
+        <BannerContainer>
+          <InfoSection
+            title={title}
+            subtitle={subtitle}
+            description={description}
+            mediaType={-1}
+          />
+        </BannerContainer>
+      )}
     </StyledBanner>
   );
 };
+
+export default Banner;
