@@ -11,9 +11,13 @@ const StyledCarousel = styled.div`
   height: 100%;
   padding-bottom: 15px;
   margin: 0 0 50px 0;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
-const Index = ({ data }) => {
+const Index = ({ data, quality }) => {
   return (
     <StyledCarousel>
       {/* <AtomicImage
@@ -38,7 +42,7 @@ const Index = ({ data }) => {
             aspectRatio={item.aspectRatio}
             width="100%"
             height="100%"
-            quality={60}
+            quality={quality}
             title={item.title}
             subtitle={item.subtitle}
             description={item.description}

@@ -20,7 +20,14 @@ const BannerMedia = styled.div`
   z-index: -1;
 `;
 
-const BannerContainer = styled(Container)``;
+const BannerContainer = styled(Container)`
+  width: 100%;
+  max-width: 1440px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+`;
 
 const Banner = ({
   alt,

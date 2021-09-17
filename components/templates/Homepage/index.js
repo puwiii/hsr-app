@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "../../organisms/Header";
 import InfoSection from "../../organisms/InfoSection";
-import GridServices from "../../organisms/GridItems";
+import GridItems from "../../organisms/GridItems";
 import Carousel from "../../organisms/Carousel";
 import { serviciosData } from "../../data/servicios.data";
+import { programasData } from "../../data/programas.data";
 import { bannerData } from "../../data/banner.data";
 import { Container } from "../../../globalStyles";
 
@@ -21,7 +22,8 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      <Carousel data={bannerData} />
+
+      <Carousel data={bannerData} quality={70} />
       <HomepageContainer>
         {/* <Banner
         sourceImage="/images/banner/hospital.jpg"
@@ -30,7 +32,6 @@ const Homepage = () => {
         height="600px"
         objectFit="cover"
       /> */}
-
         <InfoSection
           title="Tu salud es lo más importante"
           subtitle="La mejor atención de la ciudad."
@@ -40,7 +41,8 @@ const Homepage = () => {
           isColumn={true}
         />
 
-        <GridServices
+        <GridItems
+          key={2}
           data={serviciosData}
           title="Nuestros Servicios"
           areLinks={true}
@@ -51,6 +53,22 @@ const Homepage = () => {
           minMobile="150px"
           maxMobile="1fr"
           qualityMedia={40}
+          mediaHeigth="120px"
+        />
+
+        <GridItems
+          key={1}
+          data={programasData}
+          title="Programas del hospital"
+          areLinks={true}
+          gap="10px"
+          responsiveType="auto-fill"
+          min="300px"
+          max="350px"
+          minMobile="150px"
+          maxMobile="1fr"
+          qualityMedia={40}
+          mediaHeigth="100px"
         />
       </HomepageContainer>
     </>

@@ -9,22 +9,22 @@ export const links = [
     icon: <BiHomeHeart />,
   },
   {
-    href: "/servicios",
+    href: "/",
     label: "Servicios",
     icon: <RiHeartAddLine />,
   },
   {
-    href: "/administracion",
+    href: "/",
     label: "Administración",
     icon: <RiHospitalLine />,
   },
   {
-    href: "/planes",
+    href: "/",
     label: "Programas",
     icon: <FaRegHandshake />,
   },
   {
-    href: "/contacto",
+    href: "/",
     label: "Contacto",
     icon: <BiPhoneCall />,
   },

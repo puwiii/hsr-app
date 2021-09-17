@@ -31,10 +31,11 @@ const Servicios = ({
   areLinks = false,
   reactiveItems = false,
   qualityMedia = 40,
+  mediaHeigth,
 }) => {
   return (
     <Section>
-      {title && <Title>Nuestros Servicios</Title>}
+      {title && <Title>{title}</Title>}
 
       <ResponsiveGrid
         gap={gap}
@@ -53,7 +54,7 @@ const Servicios = ({
                   description={item.description}
                   isReactive={areLinks}
                   mediaWidth="100%"
-                  mediaHeight="120px"
+                  mediaHeight={mediaHeigth}
                   source={item.mediaSource}
                   quality={qualityMedia}
                 />
@@ -66,7 +67,7 @@ const Servicios = ({
                 description={item.description}
                 isReactive={areLinks}
                 mediaWidth="100%"
-                mediaHeight="120px"
+                mediaHeight={mediaHeigth}
                 source={item.mediaSource}
                 quality={40}
               />
