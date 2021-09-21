@@ -7,14 +7,14 @@ export const programasData = [
     mediaSource: "/images/illustrations/accesibilidad.png",
   },
   {
-    name: "Plan nacional banco de sangre",
+    name: "Programa nacional banco de sangre",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     link: "/",
     mediaSource: "/images/illustrations/sangre.png",
   },
   {
-    name: "Salud sexual y reproductiva",
+    name: "Programa salud sexual y reproductiva",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     link: "/",

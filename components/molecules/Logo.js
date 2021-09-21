@@ -8,8 +8,8 @@ const StyledLogo = styled(Link)`
 
 const StyledLogoLink = styled.a`
   position: relative;
-  height: 50px;
-  width: 150px;
+  height: ${({ height }) => (height ? height : "50px")};
+  width: ${({ width }) => (width ? width : "150px")};
   user-select: none;
   margin: 15px 0;
 
@@ -24,15 +24,21 @@ const StyledLogoLink = styled.a`
   }
 `;
 
-export const Logo = () => {
+export const Logo = ({
+  height = "60px",
+  width = "150px",
+  mediaSource = "/images/logo-small.png",
+}) => {
   return (
     <StyledLogo href="/" passHref={true}>
-      <StyledLogoLink>
+      <StyledLogoLink height={height} width={width}>
         <AtomicImage
-          src="/images/logo-icon.png"
+          // width={width}
+          // height={height}
+          src={mediaSource}
           layout="fill"
           objectFit="contain"
-          quality={100}
+          quality={67}
           alt="Hospital Santa Rosa - Villaguay"
         />
       </StyledLogoLink>

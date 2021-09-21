@@ -30,7 +30,7 @@ const Index = ({ data, quality }) => {
       <Carousel
         autoPlay={true}
         infiniteLoop={true}
-        interval={10000}
+        interval={3000}
         showThumbs={false}
         transitionTime={1000}
       >

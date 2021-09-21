@@ -1,37 +1,29 @@
 import React from "react";
+import { Container } from "../../../globalStyles";
+import { SectionContainer } from "../../molecules/SectionContainer";
 import Header from "../../organisms/Header";
 import InfoSection from "../../organisms/InfoSection";
 import GridItems from "../../organisms/GridItems";
 import Carousel from "../../organisms/Carousel";
+import Footer from "../../organisms/Footer";
 import { serviciosData } from "../../data/servicios.data";
 import { programasData } from "../../data/programas.data";
 import { bannerData } from "../../data/banner.data";
-import { Container } from "../../../globalStyles";
+import { administracionData } from "../../data/administracion.data";
 
 import styled from "styled-components";
 
 const HomepageContainer = styled(Container)`
-  display: flex;
-  flex-direction: column;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  gap: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 `;
 
 const Homepage = () => {
   return (
     <>
       <Header />
-
       <Carousel data={bannerData} quality={70} />
-      <HomepageContainer>
-        {/* <Banner
-        sourceImage="/images/banner/hospital.jpg"
-        alt="información coronavirus"
-        width="100%"
-        height="600px"
-        objectFit="cover"
-      /> */}
+      <SectionContainer>
         <InfoSection
           title="Tu salud es lo más importante"
           subtitle="La mejor atención de la ciudad."
@@ -40,37 +32,76 @@ const Homepage = () => {
           mediaSource="home.json"
           isColumn={true}
         />
-
+      </SectionContainer>
+      <SectionContainer
+        backgroundOpacity={0.07}
+        backgroundSource="/images/stock/radiografia.jpg"
+      >
         <GridItems
           key={2}
           data={serviciosData}
           title="Nuestros Servicios"
           areLinks={true}
           gap="40px"
-          responsiveType="auto-fill"
-          min="290px"
-          max="350px"
-          minMobile="150px"
+          responsiveType="auto-fit"
+          min="320px"
+          max="1fr"
+          minMobile="300px"
           maxMobile="1fr"
           qualityMedia={40}
-          mediaHeigth="120px"
+          mediaHeight="100px"
+          mediaWidth="200px"
+          layoutItems="row"
+          textAlignItems="left"
         />
-
+      </SectionContainer>
+      <SectionContainer
+        backgroundOpacity={0.05}
+        // backgroundSource="/images/stock/stock1.jpg"
+      >
         <GridItems
           key={1}
           data={programasData}
+          // alignItems="flex-end"
           title="Programas del hospital"
           areLinks={true}
-          gap="10px"
-          responsiveType="auto-fill"
-          min="300px"
-          max="350px"
+          gap="40px"
+          responsiveType="auto-fit"
+          min="220px"
+          max="1fr"
           minMobile="150px"
           maxMobile="1fr"
           qualityMedia={40}
-          mediaHeigth="100px"
+          mediaHeight="70px"
         />
-      </HomepageContainer>
+      </SectionContainer>
+      <SectionContainer
+        backgroundOpacity={0.05}
+        backgroundSource="/images/stock/table.jpg"
+        // variantColor={true}
+      >
+        <GridItems
+          key={2}
+          data={administracionData}
+          title="¿Quienes somos?"
+          areLinks={false}
+          gap="40px"
+          responsiveType="auto-fit"
+          min="300px"
+          max="1fr"
+          minMobile="300px"
+          maxMobile="1fr"
+          qualityMedia={70}
+          mediaHeight="350px"
+          mediaWidth="100%"
+          mediaObjectFit="cover"
+          // layoutItems="row"
+          textAlignItems="center"
+          clipMedia={true}
+          blurItems={false}
+        />
+      </SectionContainer>
+      <Footer />{" "}
     </>
   );
 };

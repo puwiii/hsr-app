@@ -6,16 +6,18 @@ import { ResponsiveGrid } from "../../atoms/ResponsiveGrid";
 import { Title } from "../../atoms/Title";
 import { ImageBox } from "../../atoms/ImageBox";
 import { Item } from "../../molecules/Item";
+import Link from "next/link";
 
 const Section = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
+  align-items: ${({ alignItems }) => alignItems};
   gap: 80px;
 
   @media screen and (max-width: 425px) {
-    gap: 10px;
+    gap: 40px;
   }
 `;
 
@@ -24,17 +26,23 @@ const Servicios = ({
   title,
   gap,
   responsiveType = "auto-fill",
+  alignItems = "flex-start",
   min,
   max,
   minMobile,
   maxMobile,
   areLinks = false,
-  reactiveItems = false,
   qualityMedia = 40,
-  mediaHeigth,
+  mediaWidth = "100%",
+  mediaHeight,
+  layoutItems,
+  textAlignItems,
+  clipMedia = false,
+  mediaObjectFit = "contain",
+  blurItems = false,
 }) => {
   return (
-    <Section>
+    <Section alignItems={alignItems}>
       {title && <Title>{title}</Title>}
 
       <ResponsiveGrid
@@ -47,18 +55,25 @@ const Servicios = ({
       >
         {areLinks
           ? data.map((item, index) => (
-              <AnchorLink href={item.link} key={index}>
-                <Item
-                  key={index}
-                  title={item.name}
-                  description={item.description}
-                  isReactive={areLinks}
-                  mediaWidth="100%"
-                  mediaHeight={mediaHeigth}
-                  source={item.mediaSource}
-                  quality={qualityMedia}
-                />
-              </AnchorLink>
+              <Link href={item.link} passHref={true} key={index}>
+                <a>
+                  <Item
+                    key={index}
+                    title={item.name}
+                    description={item.description}
+                    isReactive={areLinks}
+                    mediaWidth={mediaWidth}
+                    mediaHeight={mediaHeight}
+                    source={item.mediaSource}
+                    quality={qualityMedia}
+                    layout={layoutItems}
+                    textAlign={textAlignItems}
+                    clipMedia={clipMedia}
+                    mediaObjectFit={mediaObjectFit}
+                    blurItem={blurItems}
+                  />
+                </a>
+              </Link>
             ))
           : data.map((item, index) => (
               <Item
@@ -66,10 +81,15 @@ const Servicios = ({
                 title={item.name}
                 description={item.description}
                 isReactive={areLinks}
-                mediaWidth="100%"
-                mediaHeight={mediaHeigth}
+                mediaWidth={mediaWidth}
+                mediaHeight={mediaHeight}
                 source={item.mediaSource}
-                quality={40}
+                quality={qualityMedia}
+                layout={layoutItems}
+                textAlign={textAlignItems}
+                clipMedia={clipMedia}
+                mediaObjectFit={mediaObjectFit}
+                blurItem={blurItems}
               />
             ))}
       </ResponsiveGrid>

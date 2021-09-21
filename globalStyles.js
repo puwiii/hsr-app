@@ -60,6 +60,10 @@ user-select: none; */
 text-decoration:none;
 }
 
+a:-webkit-any-link{
+  color:inherit;
+}
+
 /* a:visited {
   color: inherit;
 } */
@@ -111,6 +115,9 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 0 80px;
+
+  background: ${({ theme, variantColor }) =>
+    variantColor ? theme.color_background_300 : "transparent"};
 
   @media screen and (max-width: 960px) {
     padding: 0 25px;

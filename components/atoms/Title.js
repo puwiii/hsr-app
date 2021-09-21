@@ -5,22 +5,23 @@ export const Title = styled.h2`
   font-size: ${({ theme }) => theme.font_xl};
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   font-family: "Merriweather", serif;
 
   text-align: ${({ ta }) => ta};
 
-  color: ${({ theme }) => theme.color_primary_500};
+  color: ${({ theme }) => theme.color_primary_600};
 
   &::before {
     content: "";
     position: absolute;
-    bottom: -15px;
-    left: 20px;
-    width: calc(50% - 15px);
-    height: 10%;
-    z-index: -1;
-    background: ${({ theme }) => theme.color_primary_500 + "44"};
+    bottom: -10px;
+    left: 0px;
+    width: calc(80% - 15px);
+    height: 70%;
+    border-radius: 2px;
+    z-index: 1;
+    background: ${({ theme }) => theme.color_primary_600 + "22"};
   }
 
   @media screen and (max-width: 425px) {

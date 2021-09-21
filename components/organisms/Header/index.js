@@ -16,7 +16,8 @@ import { Container } from "../../../globalStyles";
 const StyledHeader = styled.header`
   display: grid;
   place-items: center;
-  position: ${({ colored, theme }) => (colored ? "fixed" : "absolute")};
+  position: ${({ colored, theme }) => (colored ? "fixed" : "fixed")};
+
   top: 0;
   z-index: 10;
   width: 100%;
@@ -45,7 +46,7 @@ const Header = () => {
   }, []);
 
   const handleHeaderColor = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 100) {
       setColoredHeader(true);
     } else {
       setColoredHeader(false);
