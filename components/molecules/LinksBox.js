@@ -4,8 +4,8 @@ import { ResponsiveFlexbox } from "../atoms/ResponsiveFlexbox";
 import { Subtitle } from "../atoms/Subtitle";
 
 const StyledBox = styled.div`
-  border-left: 2px solid ${({ theme }) => theme.color_text_200};
-  padding: 0 10px;
+  //border-left: 2px solid ${({ theme }) => theme.color_text_200};
+  flex: 1 0 200px;
 `;
 
 const StyledTitle = styled.h4`

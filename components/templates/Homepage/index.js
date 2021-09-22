@@ -91,7 +91,7 @@ const Homepage = () => {
           max="1fr"
           minMobile="300px"
           maxMobile="1fr"
-          qualityMedia={70}
+          qualityMedia={30}
           mediaHeight="350px"
           mediaWidth="100%"
           mediaObjectFit="cover"

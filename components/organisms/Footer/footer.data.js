@@ -9,7 +9,7 @@ export const footerData = [
       {
         icon: <HiOutlineLocationMarker />,
         link: "/",
-        label: "Villaguay, Entre Rios - Argentina",
+        label: "San Martin 1867 - Villaguay, Entre Rios - Argentina",
       },
     ],
   },

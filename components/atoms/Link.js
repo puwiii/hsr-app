@@ -12,6 +12,8 @@ const StyledLink = styled.a`
   display: flex;
   gap: 15px;
   align-items: center;
+  flex-wrap: wrap;
+  font-weight: 600;
 
   & > svg {
     font-size: ${({ theme }) => theme.font_medium};
